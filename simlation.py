@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 x = [0]
 dx = [0]
-theta = [60]
+theta = [10]
 dtheta = [0]
 f = [0]
 t = [0]
@@ -20,7 +20,7 @@ for i in range(0,10000,1):
     t.append(t[i]+dt)
     #f.append(1)
     #f.append((0-theta[i])*K-dtheta[i]*K/10)
-    f.append(K*(10-x[i])-dx[i]*K/8)
+    f.append(K*(100-x[i])-dx[i]*K/8)
     x.append(x[i] + dt*dx[i])
     dx.append(dx[i] + dt*(f[i] + m*l*dtheta[i]*dtheta[i]*np.sin(theta[i]) - m*l*g*np.sin(theta[i])*np.cos(theta[i]))/(M+m-m*l*np.cos(theta[i])*np.cos(theta[i])))
     theta.append(theta[i]+dt*dtheta[i])

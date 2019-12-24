@@ -5,12 +5,12 @@ const ctx = canvas.getContext('2d');
 
 
 canvas.width = window.innerWidth*0.98;
-canvas.height = window.innerHeight*0.5;
+canvas.height = window.innerHeight*0.3;
 
 let canvas_h = canvas.height;
 let canvas_w = canvas.width;
 let box_w = canvas_w/30;
-let box_h = canvas_h/20;
+let box_h = canvas_h/10;
 let pend_h = box_h*3;
 
 
@@ -18,12 +18,12 @@ let M = 3;
 let m = 1;
 let l = 1;
 let g = 9.8;
-let theta = 60;
+let theta = 10;
 theta = Math.PI/ 180*theta;
 let x = canvas_w/2;
 let y = canvas_h-box_h; //const.
 
-let K = 20;
+let K = 200;
 
 let f = 0;
 let dx = 0;
@@ -114,10 +114,9 @@ function loop(timestamp) {
   Inverted_pendulum_function();
   ctx.fillRect(x_0, 0, 1, canvas_h);
 
-
-  ctx.fillStyle = "#e66f88";
-  if(f >= 0) ctx.fillRect(x-(box_w/2+f/2000), y+box_h*0.47, box_w/2+f/2000, box_h*0.2);
-  else ctx.fillRect(x, y+box_h*0.47, box_w/2+Math.abs(f)/2000, box_h*0.2);
+  ctx.fillStyle = "#f41745";
+  if(f >= 0) ctx.fillRect(x-(box_w/2+f/900), y+box_h*0.48, box_w/2+f/900, box_h*0.3);
+  else ctx.fillRect(x, y+box_h*0.48, box_w/2+Math.abs(f)/900, box_h*0.3);
 
   ctx.fillStyle = "#374dbe";
   ctx.fillRect(x-box_w/2, y, box_w, box_h);
