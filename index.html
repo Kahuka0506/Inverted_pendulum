@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Inverted pendulum</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" }},
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      },
+        "HTML-CSS": { matchFontHeight: false },
+        displayAlign: "left",
+        displayIndent: "2em"
+    });
+    </script>
+  </head>
+
+  <body>
+    <h1>Inverted pendulum</h1>
+
+    <span> $x$  </span>
+    <input type="number" style="position:absolute; left:40pt;" id="body_X"  min="1" max="9000" value="30">
+    <div></div>
+
+    <span> $\theta_0$  </span>
+    <input type="number" style="position:absolute; left:40pt; " id="angle" min="0" max="360" value="0">
+    <div></div>
+
+    <span> $K$  </span>
+    <input type="number" style="position:absolute; left:40pt;" id="control_K"  min="1" max="9000" value="30">
+    <div></div>
+
+    <input type="button" style="position:absolute; left:40pt;" id="button1" value="change" onclick="change_button()">
+
+
+    <canvas id="canvas_p" style="position:absolute; left:1%; top:48%"></canvas>
+
+
+  </body>
+
+
+  <script type="text/javascript" src="main.js"></script>
+
+</html>

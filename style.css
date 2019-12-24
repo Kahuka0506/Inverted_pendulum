@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+h1{
+  color: #24226c;
+  font-size: 20pt;
+  font: small-caps bold 24px/1 sans-serif;
+}
+
+
+canvas {
+  border: 1px solid black;
+
+}
