@@ -6,7 +6,7 @@ m = 1
 l = 1
 g = 9.8
 
-x = np.array([[4],[0],[0.01],[0]])
+x = np.array([[-20],[0],[0.01],[0]])
 A = np.array([[0,1,0,0],[0,0,-m/M*g,0],[0,0,0,1],[0,0,(m+M)/M/l*g,0]])
 B = np.array([[0],[1/M],[0],[-1/l/M]])
 C = np.array([[1,0,0,0],[0,0,1,0]])
@@ -28,10 +28,10 @@ print(A+np.dot(B,K))
 
 
 
-ramda1 = -3
+ramda1 = -1
 ramda2 = -2.6
 ramda3 = -2.1
-ramda4 = -4
+ramda4 = -3
 
 I = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
 
@@ -53,13 +53,12 @@ print(K)
 
 
 
-
 x_graph = [x[0][0]]
 dx_graph = [x[1][0]]
 theta_graph = [x[2][0]]
 dtheta_graph = [x[3][0]]
 t = [0]
-dt = 0.001
+dt = 0.01
 
 
 for i in range(0,10000,1):
