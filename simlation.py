@@ -21,6 +21,7 @@ for i in range(0,10000,1):
     #f.append(1)
     #f.append((0-theta[i])*K-dtheta[i]*K/10)
     f.append(K*(100-x[i])-dx[i]*K/8)
+    #f.append(0)
     x.append(x[i] + dt*dx[i])
     dx.append(dx[i] + dt*(f[i] + m*l*dtheta[i]*dtheta[i]*np.sin(theta[i]) - m*l*g*np.sin(theta[i])*np.cos(theta[i]))/(M+m-m*l*np.cos(theta[i])*np.cos(theta[i])))
     theta.append(theta[i]+dt*dtheta[i])
