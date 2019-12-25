@@ -17,3 +17,38 @@ canvas {
   font-size: 30pt;
 
 }
+
+.x_0_show{
+  color: #2244ba;
+  font-size: 30pt;
+}
+
+
+.show_data{
+  color: #3e61dd;
+  font-size: 20pt;
+}
+
+.in{
+border:0;
+padding:8px;
+font-size:0.6em;
+font-family:Arial, sans-serif;
+color:#95ade9;
+border:solid 1px #87bef0;
+margin:0 0 20px;
+width:100px;
+
+}
+
+.buto{
+border:solid 1px #ffffff;
+padding:8px 20px;
+margin:0 0 20px;
+font-family:Arial, sans-serif;
+font-size:0.9em;
+text-transform:uppercase;
+font-weight:bold;
+color:#0a376c;
+cursor:pointer;
+}

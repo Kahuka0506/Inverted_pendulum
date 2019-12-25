@@ -6,7 +6,7 @@ m = 1
 l = 1
 g = 9.8
 
-x = np.array([[-20],[0],[0.01],[0]])
+x = np.array([[0],[0],[80/180*np.pi],[0]])
 A = np.array([[0,1,0,0],[0,0,-m/M*g,0],[0,0,0,1],[0,0,(m+M)/M/l*g,0]])
 B = np.array([[0],[1/M],[0],[-1/l/M]])
 C = np.array([[1,0,0,0],[0,0,1,0]])
@@ -28,10 +28,10 @@ print(A+np.dot(B,K))
 
 
 
-ramda1 = -1
+ramda1 = -3.1
 ramda2 = -2.6
 ramda3 = -2.1
-ramda4 = -3
+ramda4 = -4.3
 
 I = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
 
@@ -50,7 +50,8 @@ K = np.dot(KK,KA)
 
 print(K)
 
-
+print("ramda1 = ", ramda1,",ramda2 = ", ramda2,",ramda3 = ", ramda3,",ramda4 = ", ramda4,";")
+print("k_x = ", K[0][0],",k_dx = ", K[0][1],",k_theta = ", K[0][2],",k_dtheta = ", K[0][3],";")
 
 
 x_graph = [x[0][0]]
