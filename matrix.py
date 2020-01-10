@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 M = 3
-m = 1
-l = 1
+m = 2
+l = 1.3
 g = 9.8
 
-x = np.array([[0],[0],[80/180*np.pi],[0]])
+x = np.array([[0],[0],[10/180*np.pi],[0]])
 A = np.array([[0,1,0,0],[0,0,-m/M*g,0],[0,0,0,1],[0,0,(m+M)/M/l*g,0]])
 B = np.array([[0],[1/M],[0],[-1/l/M]])
 C = np.array([[1,0,0,0],[0,0,1,0]])
@@ -28,10 +28,10 @@ print(A+np.dot(B,K))
 
 
 
-ramda1 = -3.1
-ramda2 = -2.6
+ramda1 = -1.0
+ramda2 = -0.9
 ramda3 = -2.1
-ramda4 = -4.3
+ramda4 = -1.3
 
 I = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
 
