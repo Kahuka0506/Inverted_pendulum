@@ -6,28 +6,44 @@
     <title>Inverted pendulum</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
     </script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: { equationNumbers: { autoNumber: "AMS" }},
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
+    <script>
+    MathJax = {
+      chtml: {
+        matchFontHeight: false
+      }
+    };
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    
+    <script>
+    MathJax = {
+      chtml: {
+        matchFontHeight: false
       },
-        "HTML-CSS": { matchFontHeight: false },
-        displayAlign: "left",
-        displayIndent: "2em"
-    });
+      tex: {
+        inlineMath: [['$', '$']]
+      }
+    };
     </script>
-  </head>
-
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    
   <body>
     <h1>Inverted pendulum</h1>
 
     <div class="eqation" style="position:absolute; left:2%;">
-      $(M+m)\frac{d^2x}{dt^2} + ml\mathrm{cos}\theta \frac{d^2 \theta}{dt^2} - ml{\left( {\frac{d\theta}{dt}} \right)}^2 \mathrm{sin}\theta = f(t) \\
-      ml\frac{d^2 \theta}{dt^2} + ml \mathrm{cos}\theta \frac{d^2x}{dt^2} = mgl\mathrm{sin}\theta \\$
+      $(M+m)\frac{d^2x}{dt^2} + ml\mathrm{cos}\theta \frac{d^2 \theta}{dt^2} - ml{\left( {\frac{d\theta}{dt}} \right)}^2 \mathrm{sin}\theta = f(t)$
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <div class="eqation" style="position:absolute; left:2%;">
+      $ml\frac{d^2 \theta}{dt^2} + ml \mathrm{cos}\theta \frac{d^2x}{dt^2} = mgl\mathrm{sin}\theta$
     </div>
 
     <div class="x_0_show">
@@ -51,15 +67,19 @@
 
     <span> $\lambda_1:$  </span>
     <span id="control_pole1"></span>
+    <div></div>
 
     <span> $\lambda_2:$  </span>
     <span id="control_pole2"></span>
+    <div></div>
 
     <span> $\lambda_3:$  </span>
     <span id="control_pole3"></span>
+    <div></div>
 
     <span> $\lambda_4:$  </span>
     <span id="control_pole4"></span>
+    <div></div>
    </div>
 
 
