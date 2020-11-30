@@ -4,13 +4,13 @@ const canvas = document.getElementById('canvas_p');
 const ctx = canvas.getContext('2d');
 
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight*0.5;
+canvas.width = window.innerWidth*0.78;
+canvas.height = window.innerHeight*0.55;
 
 let canvas_h = canvas.height;
 let canvas_w = canvas.width;
-let box_w = canvas_w/22;
-let box_h = canvas_h/8;
+let box_w = canvas_w/20;
+let box_h = canvas_h/9;
 let pend_h = box_h*3;
 
 
@@ -31,13 +31,99 @@ let k_dx = 107.82;
 let k_theta = 943.684;
 let k_dtheta = 363.6;
 
+
 //ramda1 =  -3.1 ,ramda2 =  -2.6 ,ramda3 =  -2.1 ,ramda4 =  -4.3 ;
 //k_x =  218.3454 ,k_dx =  309.165 ,k_theta =  1657.3774 ,k_dtheta =  664.9050000000001 ;
 
 ramda1 =  -1.0 ,ramda2 =  -0.9 ,ramda3 =  -2.1 ,ramda4 =  -1.3 ;
 k_x =  7.371 ,k_dx =  24.741000000000007 ,k_theta =  867.2959130769233 ,k_dtheta =  275.54229000000004 ;
+                
+                    
+function calculate_K(){
+    
+    
+    let A = [[0,1,0,0],[0,0,-m/M*g,0],[0,0,0,1],[0,0,(m+M)/M/l*g,0]];
+    let AA = [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]];
+    for(let i = 0; i < 4; i++){
+        for(let j = 0; j < 4; j++){
+            AA[i][j] = 0.0;
+            for(let k = 0; k < 4; k++){
+                AA[i][j] += A[i][k]*A[k][j];
+                
+            }
+        }
+    }
+    let AAA = [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]];
+    for(let i = 0; i < 4; i++){
+        for(let j = 0; j < 4; j++){
+            AAA[i][j] = 0.0;
+            for(let k = 0; k < 4; k++){
+                AAA[i][j] += AA[i][k]*A[k][j];
+                
+            }
+        }
+    }
+    let AAAA = [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]];
+    for(let i = 0; i < 4; i++){
+        for(let j = 0; j < 4; j++){
+            AAAA[i][j] = 0.0;
+            for(let k = 0; k < 4; k++){
+                AAAA[i][j] += AAA[i][k]*A[k][j];
+                
+            }
+        }
+    }
+                        
+    let I = [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]];
 
+    let K = [k_x,k_dx,k_theta,k_dtheta];
+    let KK = [M,0,M*l*l,0];
 
+             
+                        
+                        
+    let bb0 = ramda1*ramda2*ramda3*ramda4;
+    let bb1 = -(ramda1*ramda2*ramda3 + ramda1*ramda3*ramda4 + ramda1*ramda2*ramda4 + ramda4*ramda2*ramda3);
+    let bb2 = ramda1*ramda2 + ramda2*ramda3 + ramda3*ramda4 + ramda1*ramda4;
+    let bb3 = -(ramda1 + ramda2 + ramda3 + ramda4);
+
+                        
+    let KA = AAAA;
+
+    for(let i = 0; i < 4; i++){
+        for(let j = 0; j < 4; j++){
+            KA[i][j] += (bb3*AAA[i][j] + bb2*AA[i][j] + bb1*A[i][j] + bb0*I[i][j]);
+            
+        }
+        
+    }
+    
+    
+    for(let i = 0; i < 4; i++){
+        K[i] = 0.0;
+        for(let j = 0; j < 4; j++){
+            K[i] += KK[j]*KA[j][i];
+        }
+        
+    }
+    
+    
+  k_x = K[0];
+  k_dx = K[1];
+  k_theta = K[2];
+  k_dtheta = K[3];
+                        
+                        
+  document.getElementById('K_0_show').innerHTML = K[0].toFixed(3) ;
+  document.getElementById('K_1_show').innerHTML = K[1].toFixed(3) ;
+  document.getElementById('K_2_show').innerHTML = K[2].toFixed(3) ;
+  document.getElementById('K_3_show').innerHTML = K[3].toFixed(3) ;
+
+}
+
+calculate_K();
+                    
+                    
 let theta = 30;
 theta = Math.PI/ 180*theta;
 let x = 0;
@@ -49,10 +135,10 @@ let x_0 = 0;
 let x_0_0 = 0;
 
 document.getElementById('body_X').value = x_0;
-document.getElementById('control_pole1').innerHTML = ramda1;
-document.getElementById('control_pole2').innerHTML = ramda2;
-document.getElementById('control_pole3').innerHTML = ramda3;
-document.getElementById('control_pole4').innerHTML = ramda4;
+document.getElementById('ramda1_in').value = ramda1;
+document.getElementById('ramda2_in').value = ramda2;
+document.getElementById('ramda3_in').value = ramda3;
+document.getElementById('ramda4_in').value = ramda4;
 
 
 let x_ve = [x,dx,theta,dtheta];
@@ -154,6 +240,15 @@ function change_button(){
   if(changing == 0){
     window.cancelAnimationFrame(loop);
     x_0 = parseFloat(document.getElementById("body_X").value);
+    ramda1 = parseFloat(document.getElementById("ramda1_in").value);
+    ramda2 = parseFloat(document.getElementById("ramda2_in").value);
+    ramda3 = parseFloat(document.getElementById("ramda3_in").value);
+    ramda4 = parseFloat(document.getElementById("ramda4_in").value);
+    calculate_K();
+      
+    
+      
+      
     x_0_0 = x;
     dist = Math.abs(x_0_0 - x_0);
     changing = 1;

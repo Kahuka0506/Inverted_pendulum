@@ -33,6 +33,10 @@ ramda2 = -0.9
 ramda3 = -2.1
 ramda4 = -1.3
 
+
+
+
+
 I = np.array([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
 
 bb0 = ramda1*ramda2*ramda3*ramda4

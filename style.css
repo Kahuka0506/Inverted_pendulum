@@ -24,8 +24,8 @@ canvas {
 }
 
 .show_data_rambda{
-  color: brack;
-  font-size: 15pt;
+  color: #3e61dd;
+  font-size: 25pt;
 }
 
 
@@ -44,6 +44,18 @@ border:solid 1px #87bef0;
 margin:0 0 20px;
 width:90pt;
 height:30pt;
+}
+
+.in_ramda{
+border:0;
+padding:8px;
+font-size:0.6em;
+font-family:Arial, sans-serif;
+color:#95ade9;
+border:solid 1px #87bef0;
+margin:0 0 20px;
+width:70pt;
+height:20pt;
 }
 
 .buto {
