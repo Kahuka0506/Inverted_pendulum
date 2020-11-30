@@ -39,50 +39,44 @@
     
   <body>
     <h1>Inverted pendulum</h1>
-
-    <div class="eqation" style="position:absolute; left:2%;">
-      $(M+m)\frac{d^2x}{dt^2} + ml\mathrm{cos}\theta \frac{d^2 \theta}{dt^2} - ml{\left( {\frac{d\theta}{dt}} \right)}^2 \mathrm{sin}\theta = f(t)$
-    </div>
-    <br><br><br>
-    <br><br><br>
-    <div class="eqation" style="position:absolute; left:2%;">
-      $ml\frac{d^2 \theta}{dt^2} + ml \mathrm{cos}\theta \frac{d^2x}{dt^2} = mgl\mathrm{sin}\theta$
-    </div>
+            
+    <p class="eqation" style="position:absolute; left:5%; top:22pt;">
+        $(M+m)\frac{d^2x}{dt^2} + ml\mathrm{cos}\theta \frac{d^2 \theta}{dt^2} - ml{\left( {\frac{d\theta}{dt}} \right)}^2 \mathrm{sin}\theta = f(t)$<br>
+        $ml\frac{d^2 \theta}{dt^2} + ml \mathrm{cos}\theta \frac{d^2x}{dt^2} = mgl\mathrm{sin}\theta$
+    </p>
+    
+    
+    
 
     <div class="x_0_show">
-    <div style="position:absolute; left:1%; top:28%"> $x_0:$  </div>
-    <input type="number" class="in" style="position:absolute; left:60pt; top:29%;" id="body_X" value="30">
+    <div style="position:absolute; left:10pt; top:30%"> $x_0:$  </div>
+    <input type="number" class="in" style="position:absolute; left:70pt; top:30%;" id="body_X" value="30">
     </div>
-    <div></div>
+    
 
-    <input type="button" class="buto" style="position:absolute; left:5%; top:35%" id="button1" value="change" onclick="change_button()">
-
-
+    <input type="button" class="buto" style="position:absolute; left:190pt; top:30%" id="button1" value="change" onclick="change_button()">
 
 
-    <div class="show_data" style="position:absolute; left:1%; top:42%">
-    <span> $\theta$ : </span>
-    <span id="theta_show"></span>
 
-    <span> $x$ : </span>
-    <span id="x_show"></span>
-    <div></div>
 
-    <span> $\lambda_1:$  </span>
-    <span id="control_pole1"></span>
-    <div></div>
-
-    <span> $\lambda_2:$  </span>
-    <span id="control_pole2"></span>
-    <div></div>
-
-    <span> $\lambda_3:$  </span>
-    <span id="control_pole3"></span>
-    <div></div>
-
-    <span> $\lambda_4:$  </span>
-    <span id="control_pole4"></span>
-    <div></div>
+    <div style="position:absolute; left:1%; top:42%">
+    
+    <span class="show_data_rambda" >
+    $\lambda_1 = $ <span id="control_pole1"></span>,
+    $\lambda_2 = $ <span id="control_pole2"></span>,
+    $\lambda_3 = $ <span id="control_pole3"></span>,
+    $\lambda_4 = $ <span id="control_pole4"></span>
+    </span>
+    <br><br><br>
+    
+    
+    <span class="show_data" >
+    $\theta = $ <span id="theta_show"></span>
+    <br>
+    $x = $ <span id="x_show"></span>
+    </span>
+    
+    
    </div>
 
 

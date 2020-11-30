@@ -2,7 +2,7 @@
 
 h1{
   color: #24226c;
-  font-size: 20pt;
+  font-size: 17pt;
   font: small-caps bold 24px/1 sans-serif;
 }
 
@@ -14,7 +14,7 @@ canvas {
 
 .eqation{
   color: #24226c;
-  font-size: 30pt;
+  font-size: 25pt;
 
 }
 
@@ -23,10 +23,15 @@ canvas {
   font-size: 30pt;
 }
 
+.show_data_rambda{
+  color: brack;
+  font-size: 15pt;
+}
+
 
 .show_data{
   color: #3e61dd;
-  font-size: 20pt;
+  font-size: 25pt;
 }
 
 .in{
@@ -37,18 +42,29 @@ font-family:Arial, sans-serif;
 color:#95ade9;
 border:solid 1px #87bef0;
 margin:0 0 20px;
-width:100px;
-
+width:90pt;
+height:30pt;
 }
 
-.buto{
-border:solid 1px #ffffff;
-padding:8px 20px;
-margin:0 0 20px;
-font-family:Arial, sans-serif;
-font-size:0.9em;
-text-transform:uppercase;
-font-weight:bold;
-color:#0a376c;
-cursor:pointer;
+.buto {
+  min-width: 100px;
+  font-family:Arial, sans-serif;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 22pt;
+  cursor: pointer;
 }
+ 
+.buto:hover {
+  background: #1d49aa;
+}
+ 
+.buto:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
